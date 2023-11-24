@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>The Meal Manager</title>
+</head>
+<body>
+    <div class="form-container">
+        <div id="step1" class="form-step">
+            <label for="mealCategory">Please Select a meal:</label>
+            <select id="mealCategory" required>
+                <option value="breakfast">Breakfast</option>
+                <option value="lunch">Lunch</option>
+                <option value="dinner">Dinner</option>
+            </select>
+            <br>
+            <label for="numPeople">Please Enter Number of people :</label>
+            <input type="number" id="numPeople" min="1" max="10" required>
+            <br>
+            <button onclick="nextStep()">Next</button>
+        </div>
+
+        <div id="step2" class="form-step">
+            
+        </div>
+
+        <div id="step3" class="form-step">
+            
+        </div>
+
+        <div id="step4" class="form-step">
+            
+        </div>
+    </div>
+
+    <script src="meal.js"></script>
+</body>
+</html>

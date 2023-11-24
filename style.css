@@ -1,0 +1,85 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: white;
+}
+
+.form-container {
+    background-color: rgb(233, 239, 241);
+    border: 1px solid #ccc;
+    padding: 80px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-color: black;
+}
+
+.form-step {
+    display: none;
+}
+
+.error {
+    color: red;
+    font-size: 14px;
+}
+
+.form-step {
+    display: none;
+}
+
+
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: black;
+    font-weight: bold;
+}
+
+select,
+input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #4caf50;
+    color: #ffffff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#add{
+    background-color: blue;
+    color: #ffffff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#submit {
+    background-color: orangered;
+    color: #ffffff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Add additional styling based on your design preferences */
