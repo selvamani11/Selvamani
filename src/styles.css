@@ -1,0 +1,87 @@
+.App {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.table-container {
+  flex: 1;
+  padding: 20px;
+  overflow: auto;
+}
+
+.side-dashboard {
+  width: 30%;
+  max-width: 400px;
+  background: #ffffff;
+  padding: 20px;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.transaction-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.transaction-table th, .transaction-table td {
+  border: 1px solid #ddd;
+  padding: 12px 15px;
+  text-align: left;
+}
+
+.transaction-table th {
+  background-color: #3498db;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.transaction-table tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.transaction-table tbody tr:hover {
+  background-color: #f1f9ff;
+}
+
+.transaction-table tbody tr {
+  transition: background-color 0.3s ease;
+}
+
+.transaction-table tbody tr td {
+  color: #333;
+}
+
+.transaction-table tbody tr td a {
+  color: #3498db;
+  text-decoration: none;
+}
+
+.transaction-table tbody tr td a:hover {
+  text-decoration: underline;
+}
+
+.rejected {
+  color: red;
+}
+
+.success{
+  color: green;
+}
