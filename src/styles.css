@@ -2,6 +2,7 @@
   display: flex;
   height: 100vh;
   overflow: hidden;
+  font-family: Arial, sans-serif;
 }
 
 .table-container {
@@ -16,7 +17,7 @@
   background: #e5e5f0;
   padding: 20px;
   box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
-  border-radius: 5px 50px 5px 50px;
+  border-radius: 20px 5px 20px 5px;
   margin: 5px 10px 5px 10px;
 }
 
@@ -61,6 +62,7 @@
 
 .transaction-table tbody tr:hover {
   background-color: #f1f9ff;
+  cursor: pointer;
 }
 
 .transaction-table tbody tr {
@@ -90,4 +92,18 @@
 
 .pending {
   color: orange
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.toggle-chart-icon {
+  cursor: pointer;
+}
+
+.toggle-chart-icon:hover {
+  color: #007bff; /* Change color on hover */
 }
