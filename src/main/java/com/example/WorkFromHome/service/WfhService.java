@@ -1,6 +1,7 @@
 package com.example.WorkFromHome.service;
 
 import com.example.WorkFromHome.constants.Constants;
+import com.example.WorkFromHome.entity.AssignDays;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
@@ -18,7 +19,7 @@ import java.util.*;
 public class WfhService {
 
     private final ResourceLoader resourceLoader;
-    private List<Assignment> lastAssignments = new ArrayList<>();
+    private List<AssignDays> lastAssignments = new ArrayList<>();
 
     @Autowired
     public WfhService(ResourceLoader resourceLoader) {
@@ -57,7 +58,7 @@ public class WfhService {
         return data;
     }
 
-    public List<Assignment> assignDays(List<String> names, List<String> days, List<String> emails) {
+    public List<AssignDays> assignDays(List<String> names, List<String> days, List<String> emails) {
         if (names.isEmpty() || days.isEmpty() || emails.isEmpty()) {
             throw new IllegalArgumentException(Constants.EMPTY_LIST_ERROR);
         }
@@ -114,11 +115,11 @@ public class WfhService {
         Collections.shuffle(flattenedDayAssignments);
 
         int nameIndex = 0;
-        List<Assignment> newAssignments = new ArrayList<>();
+        List<AssignDays> newAssignments = new ArrayList<>();
         for (String day : flattenedDayAssignments) {
             String name = shuffledNames.get(nameIndex);
             String email = shuffledEmails.get(nameIndex);
-            newAssignments.add(new Assignment(name, email, day));
+            newAssignments.add(new AssignDays(name, email, day));
             nameIndex++;
         }
 
@@ -126,43 +127,7 @@ public class WfhService {
         return newAssignments;
     }
 
-    public List<Assignment> getLastAssignments() {
+    public List<AssignDays> getLastAssignments() {
         return lastAssignments;
-    }
-
-    public static class Assignment {
-        private String name;
-        private String email;
-        private String days;
-
-        public Assignment(String name, String email, String days) {
-            this.name = name;
-            this.email = email;
-            this.days = days;
-        }
-
-        public String getName() {
-            return name;
-        }
-
-        public String getEmail() {
-            return email;
-        }
-
-        public String getDays() {
-            return days;
-        }
-
-        public void setName(String name) {
-            this.name = name;
-        }
-
-        public void setEmail(String email) {
-            this.email = email;
-        }
-
-        public void setDays(String days) {
-            this.days = days;
-        }
     }
 }

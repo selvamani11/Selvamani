@@ -2,6 +2,7 @@ package com.example.WorkFromHome.controller;
 
 import com.example.WorkFromHome.config.ExcelProperties;
 import com.example.WorkFromHome.constants.Constants;
+import com.example.WorkFromHome.entity.AssignDays;
 import com.example.WorkFromHome.service.WfhService;
 import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +25,7 @@ public class WfhController {
     private List<String> names;
     private List<String> days;
     private List<String> emails;
-    private List<WfhService.Assignment> currentAssignments;
+    private List<AssignDays> currentAssignments;
 
     @Autowired
     public WfhController(WfhService wfhService, ExcelProperties excelProperties) {
@@ -45,7 +46,7 @@ public class WfhController {
     }
 
     @GetMapping("/list")
-    public List<WfhService.Assignment> refreshAssignments() {
+    public List<AssignDays> refreshAssignments() {
         try {
             this.currentAssignments = wfhService.assignDays(names, days, emails);
         } catch (Exception e) {
@@ -55,7 +56,7 @@ public class WfhController {
     }
 
     @GetMapping
-    public List<WfhService.Assignment> getAssignments() {
+    public List<AssignDays> getAssignments() {
         return this.currentAssignments;
     }
 }
